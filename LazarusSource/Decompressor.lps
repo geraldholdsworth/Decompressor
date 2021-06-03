@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <Version Value="11"/>
+    <BuildModes Active="Default"/>
+    <Units Count="7">
+      <Unit0>
+        <Filename Value="Decompressor.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="2"/>
+        <UsageCount Value="136"/>
+        <Loaded Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="MainUnit.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="MainForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="77"/>
+        <CursorPos X="70" Y="94"/>
+        <UsageCount Value="136"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="Spark.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="1"/>
+        <CursorPos X="34" Y="6"/>
+        <UsageCount Value="83"/>
+        <Loaded Value="True"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value=""/>
+        <UsageCount Value="5"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="/usr/local/share/fpcsrc/3.2.0/packages/zlib/src/zlib.pp"/>
+        <UnitName Value="ZLib"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="130"/>
+        <UsageCount Value="10"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="/usr/local/share/fpcsrc/3.2.0/packages/paszlib/src/zstream.pp"/>
+        <UnitName Value="ZStream"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="361"/>
+        <CursorPos X="14" Y="376"/>
+        <UsageCount Value="10"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="/usr/local/share/fpcsrc/3.2.0/packages/paszlib/src/gzio.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="632"/>
+        <CursorPos X="2" Y="566"/>
+        <UsageCount Value="10"/>
+      </Unit6>
+    </Units>
+    <JumpHistory Count="30" HistoryIndex="29">
+      <Position1>
+        <Filename Value="MainUnit.pas"/>
+        <Caret Line="108" Column="14" TopLine="91"/>
+      </Position1>
+      <Position2>
+        <Filename Value="MainUnit.pas"/>
+        <Caret Line="137" Column="10" TopLine="72"/>
+      </Position2>
+      <Position3>
+        <Filename Value="MainUnit.pas"/>
+        <Caret Line="9" Column="16"/>
+      </Position3>
+      <Position4>
+        <Filename Value="MainUnit.pas"/>
+        <Caret Line="108" Column="33" TopLine="88"/>
+      </Position4>
+      <Position5>
+        <Filename Value="MainUnit.pas"/>
+        <Caret Line="179" TopLine="148"/>
+      </Position5>
+      <Position6>
+        <Filename Value="MainUnit.pas"/>
+        <Caret Line="53" Column="67" TopLine="39"/>
+      </Position6>
+      <Position7>
+        <Filename Value="MainUnit.pas"/>
+        <Caret Line="167" Column="62" TopLine="149"/>
+      </Position7>
+      <Position8>
+        <Filename Value="MainUnit.pas"/>
+        <Caret Line="177" Column="39" TopLine="149"/>
+      </Position8>
+      <Position9>
+        <Filename Value="MainUnit.pas"/>
+        <Caret Line="69" Column="13" TopLine="61"/>
+      </Position9>
+      <Position10>
+        <Filename Value="MainUnit.pas"/>
+        <Caret Line="185" Column="42" TopLine="168"/>
+      </Position10>
+      <Position11>
+        <Filename Value="MainUnit.pas"/>
+        <Caret Line="168" Column="8" TopLine="158"/>
+      </Position11>
+      <Position12>
+        <Filename Value="MainUnit.pas"/>
+        <Caret Line="214" Column="11" TopLine="186"/>
+      </Position12>
+      <Position13>
+        <Filename Value="MainUnit.pas"/>
+        <Caret Line="193" TopLine="183"/>
+      </Position13>
+      <Position14>
+        <Filename Value="MainUnit.pas"/>
+        <Caret Line="19"/>
+      </Position14>
+      <Position15>
+        <Filename Value="MainUnit.pas"/>
+        <Caret Line="121" Column="27" TopLine="107"/>
+      </Position15>
+      <Position16>
+        <Filename Value="MainUnit.pas"/>
+        <Caret Line="9" Column="22"/>
+      </Position16>
+      <Position17>
+        <Filename Value="Spark.pas"/>
+        <Caret Line="335" Column="34" TopLine="87"/>
+      </Position17>
+      <Position18>
+        <Filename Value="Spark.pas"/>
+        <Caret Line="248" Column="4" TopLine="228"/>
+      </Position18>
+      <Position19>
+        <Filename Value="Spark.pas"/>
+        <Caret Line="4" Column="19"/>
+      </Position19>
+      <Position20>
+        <Filename Value="MainUnit.pas"/>
+        <Caret Line="108" Column="62" TopLine="92"/>
+      </Position20>
+      <Position21>
+        <Filename Value="Spark.pas"/>
+        <Caret Line="263" Column="27" TopLine="247"/>
+      </Position21>
+      <Position22>
+        <Filename Value="Spark.pas"/>
+        <Caret Line="73" Column="55" TopLine="73"/>
+      </Position22>
+      <Position23>
+        <Filename Value="Spark.pas"/>
+        <Caret Line="60" Column="13" TopLine="44"/>
+      </Position23>
+      <Position24>
+        <Filename Value="Spark.pas"/>
+        <Caret Line="73" Column="63" TopLine="46"/>
+      </Position24>
+      <Position25>
+        <Filename Value="MainUnit.pas"/>
+        <Caret Line="44" TopLine="44"/>
+      </Position25>
+      <Position26>
+        <Filename Value="MainUnit.pas"/>
+        <Caret Line="45" TopLine="45"/>
+      </Position26>
+      <Position27>
+        <Filename Value="Spark.pas"/>
+        <Caret Line="321" Column="32" TopLine="109"/>
+      </Position27>
+      <Position28>
+        <Filename Value="Spark.pas"/>
+        <Caret Line="75" Column="37" TopLine="47"/>
+      </Position28>
+      <Position29>
+        <Filename Value="Spark.pas"/>
+        <Caret Line="336" Column="79" TopLine="323"/>
+      </Position29>
+      <Position30>
+        <Filename Value="Spark.pas"/>
+        <Caret Line="46" Column="31" TopLine="37"/>
+      </Position30>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes Count="0" ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+  <Debugging>
+    <Watches Count="1">
+      <Item1>
+        <Expression Value="buffer"/>
+      </Item1>
+    </Watches>
+  </Debugging>
+</CONFIG>
