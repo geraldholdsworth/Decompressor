@@ -40,25 +40,27 @@ var
  buffer      : TDynByteArray;
  F           : TFileStream;
  fn          : String;
- gzip,zip    : Boolean;
+ gzip,
+ zip,
+ pack        : Boolean;
  SparkFile   : TSpark;
- bigdir      : Integer;
 begin
  Memo1.Visible:=False;
  buffer:=nil;
- bigdir:=0;
  for i:=0 to Length(FileNames)-1 do
  begin
   //Reset the flags
   gzip:=False;
-  zip:=False;
+  zip :=False;
+  pack:=False;
   //See if it is a GZ file or ZIP file
   F:=TFileStream.Create(FileNames[i],fmOpenRead or fmShareDenyNone);
-  SetLength(buffer,4);
-  F.Read(buffer[0],4);
+  SetLength(buffer,5);
+  F.Read(buffer[0],5);
   F.Free;
-  if(buffer[0]=$1F)and(buffer[1]=$8B)then gzip:=True;
+  if(buffer[0]=$1F)and(buffer[1]=$8B)and(buffer[2]=$08)then gzip:=True;
   if(buffer[0]=$50)and(buffer[1]=$4B)and(buffer[2]=$03)and(buffer[3]=$04)then zip:=True;
+  if(buffer[0]=$50)and(buffer[1]=$41)and(buffer[2]=$43)and(buffer[3]=$4B)and(buffer[4]=$00)then pack:=True;
   if gzip then //GZip
   begin
    //Inflate the file into buffer
@@ -69,7 +71,7 @@ begin
    F.Write(buffer[0],Length(buffer));
    F.Free;
   end;
-  if zip then //Zip
+  if(zip)or(pack)then //Zip
   begin
    SparkFile:=TSpark.Create(FileNames[i]);
    Memo1.Clear;
@@ -80,7 +82,7 @@ begin
    begin
     Memo1.Lines.Add('Number of entries: '+IntToStr(Length(SparkFile.FileList)));
     Memo1.Lines.Add('Total uncompressed size: '+IntToStr(SparkFile.UncompressedSize));
-    Memo1.Lines.Add('Parent | Filename | Load Address | Execution Address | File Length | Attributes');
+    Memo1.Lines.Add('Parent | Filename | Load Address | Execution Address | File Length | Attributes | Extra information');
     for j:=0 to Length(SparkFile.FileList)-1 do
     begin
      fn:='';
@@ -101,21 +103,28 @@ begin
                      IntToHex(SparkFile.FileList[j].Length  ,8)+' '+
                      fn;
      if SparkFile.FileList[j].Directory then //Display the number of entries
+      fn:=fn+' '+IntToStr(SparkFile.FileList[j].NumEntries)+' entries';
+     if not SparkFile.FileList[j].Directory then //Otherwise display where the data is
      begin
-      fn:=fn+' ('+IntToStr(SparkFile.FileList[j].NumEntries)+' entries)';
-      if SparkFile.FileList[j].NumEntries>bigdir then
-       bigdir:=SparkFile.FileList[j].NumEntries;
+      fn:=fn+' '+IntToHex(SparkFile.FileList[j].DataOffset,8);
+      //And if it is uncompressed
+      if SparkFile.FileList[j].Length=SparkFile.FileList[j].Size then
+       fn:=fn+' uncompressed';
      end;
-     if Length(SparkFile.FileList[j].Filename)>10 then bigdir:=78; //Long filenames
      Memo1.Lines.Add(fn);
      //Uncomment to extract each file - this will increase the reading time.
-     {buffer:=SparkFile.ExtractFileData(j);
-     Memo1.Lines.Add('File read OK. Length: 0x'+IntToHex(Length(buffer),8));}
+     {if not SparkFile.FileList[j].Directory then
+     begin
+      buffer:=SparkFile.ExtractFileData(j);
+      F:=TFileStream.Create(Filenames[i]+'-'+SparkFile.FileList[j].Filename,fmCreate);
+      F.Write(buffer[0],Length(buffer));
+      F.Free;
+     end;}
     end;
    end;
    fn:='ADFS Old Directory (S/M/L)';
-   if bigdir>47 then fn:='ADFS New Directory (D/E/F)';
-   if bigdir>77 then fn:='ADFS Big Directory (E+/F+)';
+   if SparkFile.MaxDirEnt>47 then fn:='ADFS New Directory (D/E/F)';
+   if SparkFile.MaxDirEnt>77 then fn:='ADFS Big Directory (E+/F+)';
    Memo1.Lines.Add('Minimum recommended FS to use: '+fn);
    Memo1.Lines.EndUpdate;
    SparkFile.Free;

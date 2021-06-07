@@ -41,7 +41,7 @@ object MainForm: TMainForm
       Align = alClient
       Alignment = taCenter
       AutoSize = False
-      Caption = 'Drag a GZipped file (e.g. UEF) on here to inflate, or a Zip file to display the RISC OS orientated contents below.'
+      Caption = 'Drop a GZipped file (e.g. UEF) on here to inflate, or a !Spark or !PackDir file to display the RISC OS orientated contents below.'
       Font.Style = [fsBold]
       ParentColor = False
       ParentFont = False
